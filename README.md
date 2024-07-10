@@ -1,1 +1,3 @@
-Un accordeon images fait avec tailwind css
+#TAILWINDCSS
+
+- Un accordeon horizontal 3 images
