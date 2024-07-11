@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.189),
+            rgba(0, 0, 0, 0.75)
+          ),
+          url(./image-01.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+      "
+      class="pt-8 global"
+    >
+      <div class="container min-h-screen mx-auto wrapper">
+        <nav class="flex justify-between w-full h-auto text-white">
+          <a href="#" class="text-2xl font-black">OFFCANVAS Components</a>
+          <button id="toggleButton">
+            <span
+              class="block px-4 py-2 text-xl text-white rotate-90 bg-indigo-500 rounded-lg"
+              >|||</span
+            >
+          </button>
+        </nav>
+        <main>
+          <h1 class="text-3xl font-black">OFF-Canvas with Tailwind CSS</h1>
+        </main>
+        <!-- BEGIN: Offcanvas-->
+        <!-- Card Container -->
+        <div
+          id="cardContainer"
+          class="fixed top-0 right-0 w-0 h-full overflow-hidden transition-all duration-300 bg-black bg-opacity-75 shadow-lg backdrop-blur-lg"
+        >
+          <!-- Close Button -->
+          <button
+            id="closeButton"
+            class="absolute z-30 text-red-500 top-6 right-6"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+          <!-- Contenu de la card-->
+          <div class="relative w-full h-full px-8 py-16">
+            <div class="flex flex-col w-full h-auto mt-6 gap-y-1">
+              <div
+                class="flex items-center w-full h-auto px-4 py-3 text-gray-200 duration-500 ease-out rounded-md cursor-pointer gap-x-4 hover:text-gray-100 hover:bg-indigo-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-layout-dashboard"
+                >
+                  <rect width="7" height="9" x="3" y="3" rx="1" />
+                  <rect width="7" height="5" x="14" y="3" rx="1" />
+                  <rect width="7" height="9" x="14" y="12" rx="1" />
+                  <rect width="7" height="5" x="3" y="16" rx="1" />
+                </svg>
+                <h1 class="text-base font-medium">Dashboard</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END: Offcanvas-->
+      </div>
+    </div>
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const cardContainer = document.getElementById("cardContainer");
+      const closeButton = document.getElementById("closeButton");
+
+      toggleButton.addEventListener("click", () => {
+        cardContainer.style.width =
+          cardContainer.style.width === "350px" ? "0" : "350px";
+      });
+
+      closeButton.addEventListener("click", () => {
+        cardContainer.style.width = "0";
+      });
+    </script>
+  </body>
+</html>
